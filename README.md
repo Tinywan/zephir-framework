@@ -1,5 +1,5 @@
 # zephir-framework
-+   使用Zephir给PHP写扩展
+使用Zephir给PHP写扩展
 
 ####   项目结构 <a name="目录结构" />
 
@@ -14,10 +14,10 @@
 │   │   └── Service.zep
 │   ├── Db
 │   │   └── Mysql.zep
-│   └── Module                  -- 扩展模块目录
+│   └── Module                  -- 业务模块目录
 │       ├── Category.zep
 │       └── Edit.zep            -- 具体模块类
-├── config.json
+├── config.json                 -- 编译扩展配置文件
 └── ext                         -- 编译生成的.so文件
 
 ```  
@@ -25,5 +25,23 @@
 ####  依赖 <a name="编译环境" />
 +   [zephir](https://github.com/phalcon/zephir)
 +   [php-zephir-parser](https://github.com/phalcon/php-zephir-parser)
+####  编译 <a name="如何编译" />
++   1、下载:
+
+    ```bash
+    git clone https://github.com/Tinywan/zephir-framework.git
+    ```
++   2、编译:
+
+    ```bash
+    git clone https://github.com/Tinywan/zephir-framework.git
+    ```
++   3、添加扩展到`php.ini`:
+
+    ```bash
+    git clone https://github.com/Tinywan/zephir-framework.git
+    ```  
++   4、重启`php-fpm`服务,查看扩展是否安装成功      
 ####  文档
 +   [如何使用zephir编译一个扩展记录](http://www.cnblogs.com/tinywan/p/7753456.html) 
++   [关于PHP7如何安装调试工具Xdebug扩展以及Zephir的问题](http://www.cnblogs.com/tinywan/p/7447958.html) 
