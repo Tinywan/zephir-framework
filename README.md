@@ -34,6 +34,7 @@
 +   2、编译:
 
     ```bash
+    cd zephir-framework/
     zephir build
     Compiling...
     Installing...
@@ -48,7 +49,7 @@
     ```  
 +   4、重启`php-fpm`服务,查看扩展是否安装成功
     +   `sudo service php-fpm restart` 
-    +  ![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file.png)  
+    +  ![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file1.png)  
 ####  文档
 +   [如何使用zephir编译一个扩展记录](http://www.cnblogs.com/tinywan/p/7753456.html) 
 +   [关于PHP7如何安装调试工具Xdebug扩展以及Zephir的问题](http://www.cnblogs.com/tinywan/p/7447958.html) 
