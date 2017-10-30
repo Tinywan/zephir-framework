@@ -23,9 +23,24 @@
 ```  
 
 ####  依赖 <a name="编译环境" />
-+   [zephir](https://github.com/phalcon/zephir)
-+   [php-zephir-parser](https://github.com/phalcon/php-zephir-parser)
-####  编译 <a name="如何编译" />
++   [安装PHP7](http://www.cnblogs.com/tinywan/p/6607395.html)
++   [安装zephir](https://github.com/phalcon/zephir)
+
+    ```bash
+    sudo apt-get install php7.0-dev gcc make re2c autoconf
+    https://github.com/phalcon/zephir.git
+    cd zephir
+    sudo ./install -c
+    ```
++   [安装php-zephir-parser](https://github.com/phalcon/php-zephir-parser)
+
+    ```bash
+    sudo apt-get install php7.0-dev gcc make re2c autoconf
+    git clone git://github.com/phalcon/php-zephir-parser.git
+    cd php-zephir-parser
+    sudo ./install -c
+    ```
+####  安装 <a name="如何编译" />
 +   1、下载:
 
     ```bash
