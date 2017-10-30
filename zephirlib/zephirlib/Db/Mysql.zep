@@ -1,4 +1,4 @@
-namespace AmaiLib\Db;
+namespace ZephirLib\Db;
 
 class Mysql
 {

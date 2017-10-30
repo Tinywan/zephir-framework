@@ -8,7 +8,7 @@
  * |  Mail: Overcome.wan@Gmail.com
  * |  功能： 一个测试类
  * '-------------------------------------------------------------------*/
-namespace AmaiLib\Module\Think;
+namespace ZephirLib\Module\Think;
 
 class Test
 {
