@@ -28,7 +28,7 @@
 
     ```bash
     sudo apt-get install php7.0-dev gcc make re2c autoconf
-    https://github.com/phalcon/zephir.git
+    git clone https://github.com/phalcon/zephir.git
     cd zephir
     sudo ./install -c
     ```
