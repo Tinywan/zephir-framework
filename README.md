@@ -38,8 +38,24 @@
     sudo apt-get install php7.0-dev gcc make re2c autoconf
     git clone git://github.com/phalcon/php-zephir-parser.git
     cd php-zephir-parser
-    sudo ./install -c
+    sudo ./install --phpize /opt/php-7.0.9/bin/phpize --php-config /opt/php-7.0.9/bin/php-config
     ```
++   修改PHP.ini配置文件
+
+    ```bash
+    $ sudo find / -name zephir_parser.so
+    /usr/lib/php5/20121212/zephir_parser.so
+    
+    vim /opt/php-7.0.9/etc/php.ini //添加以下内容
+    [Zephir Parser]
+    extension=/opt/php-7.0.9/lib/php/extensions/no-debug-non-zts-20151012/zephir_parser.so
+
+    //重启服务器
+    sudo service php-fpm restart
+    ```
++   配置检查
+![配置检查](https://github.com/Tinywan/zephir-framework/blob/master/file/Zephir-Parser.png)
+    
 ####  安装 <a name="如何编译" />
 +   1、下载:
 
