@@ -48,12 +48,13 @@
     
     vim /opt/php-7.0.9/etc/php.ini //添加以下内容
     [Zephir Parser]
-    extension=/opt/php-7.0.9/lib/php/extensions/no-debug-non-zts-20151012/zephir_parser.so
+    extension=/usr/lib/php5/20121212/zephir_parser.so
 
     //重启服务器
     sudo service php-fpm restart
     ```
-+   配置检查
++   配置检查  
+  
 ![配置检查](https://github.com/Tinywan/zephir-framework/blob/master/file/Zephir-Parser.png)
     
 ####  安装 <a name="如何编译" />
@@ -65,7 +66,7 @@
 +   2、编译:
 
     ```bash
-    cd zephir-framework/
+    cd zephir-framework/zephirlib
     zephir build
     Compiling...
     Installing...
@@ -80,7 +81,35 @@
     ```  
 +   4、重启`php-fpm`服务,查看扩展是否安装成功
     +   `sudo service php-fpm restart` 
-    +  ![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file1.png)  
+    +  ![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file1.png) 
++   5、错误解决
+    +   编译错误
+    
+        ```bash
+        root@iZ235mi4a64Z:~/zephir-framework/zephirlib# zephir build
+        ────────────────────────────────────────────────────────────
+          The Zephir Parser extension is not loaded.
+          Note: Zephir no longer distributed with internal parser.
+          
+          To install latest stable Zephir Parser please refer to:
+          https://github.com/phalcon/php-zephir-parser
+        ────────────────────────────────────────────────────────────
+        ```
+    +   如何解决，查看命令行的配置文件，添加Zephir扩展
+    
+        ```bash
+        $ php --ini
+        Configuration File (php.ini) Path: /etc/php5/cli
+        Loaded Configuration File:         /etc/php5/cli/php.ini
+    
+        vim /etc/php5/cli/php.ini  //添加以下内容
+        [Zephir Parser]
+        extension=/usr/lib/php5/20121212/zephir_parser.so
+    
+        $ php -m | grep Zephir
+        Zephir Parser
+        ```
+
 ####  文档
 +   [如何使用zephir编译一个扩展记录](http://www.cnblogs.com/tinywan/p/7753456.html) 
 +   [关于PHP7如何安装调试工具Xdebug扩展以及Zephir的问题](http://www.cnblogs.com/tinywan/p/7447958.html) 
