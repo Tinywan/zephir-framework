@@ -6,7 +6,6 @@
  * |  Date: 2017/7/20
  * |  Time: 16:25
  * |  Mail: Overcome.wan@Gmail.com
- * |  Created by PhpStorm.
  * '-------------------------------------------------------------------*/
 namespace ZephirLib\Auth;
 
