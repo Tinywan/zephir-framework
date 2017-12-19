@@ -117,5 +117,5 @@
 +   [授权验证 license_check.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_check.php)
 
 ##  文档
-+   [如何使用zephir编译一个扩展记录](http://www.cnblogs.com/tinywan/p/7753456.html) 
-+   [关于PHP7如何安装调试工具Xdebug扩展以及Zephir的问题](http://www.cnblogs.com/tinywan/p/7447958.html) 
++   [如何使用 zephir 编译一个扩展记录](http://www.cnblogs.com/tinywan/p/7753456.html) 
++   [关于PHP7如何安装调试工具 Xdebug 扩展以及Zephir的问题](http://www.cnblogs.com/tinywan/p/7447958.html) 
