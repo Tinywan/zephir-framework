@@ -1,7 +1,7 @@
 # zephir-framework
 使用Zephir给PHP写扩展
 
-####   项目结构 <a name="目录结构" />
+##   项目结构 <a name="目录结构" />
 
 ```bash
 .
@@ -21,7 +21,7 @@
 └── ext                         -- 编译生成的.so文件
 ```
 
-####  依赖 <a name="编译环境" />
+##  依赖 <a name="编译环境" />
 +   [安装PHP7](http://www.cnblogs.com/tinywan/p/6607395.html)
 +   [安装zephir](https://github.com/phalcon/zephir)
 
@@ -55,9 +55,9 @@
     ```
 +   配置检查  
 
-  ![配置检查](https://github.com/Tinywan/zephir-framework/blob/master/file/Zephir-Parser.png)
+   + ![配置检查](https://github.com/Tinywan/zephir-framework/blob/master/file/Zephir-Parser.png)
 
-####  安装框架 <a name="如何编译" />
+##  安装框架 <a name="如何编译" />
 +   1、下载:
 
     ```bash
@@ -95,7 +95,7 @@
           https://github.com/phalcon/php-zephir-parser
         ────────────────────────────────────────────────────────────
         ```
-    +   如何解决，查看命令行`（cli）`的配置文件，添加Zephir扩展
+    +   如何解决，查看命令行`（cli）`的配置文件，添加`zephir_parser`扩展
 
         ```bash
         $ php --ini
@@ -112,6 +112,10 @@
         $ php -m | grep Zephir
         Zephir Parser
         ```
-####  文档
+##  创建和检查授权脚本
++   [创建 auth_key license_create.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_create.php)
++   [授权验证 license_check.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_check.php)
+
+##  文档
 +   [如何使用zephir编译一个扩展记录](http://www.cnblogs.com/tinywan/p/7753456.html) 
 +   [关于PHP7如何安装调试工具Xdebug扩展以及Zephir的问题](http://www.cnblogs.com/tinywan/p/7447958.html) 
