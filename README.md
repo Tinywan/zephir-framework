@@ -22,6 +22,7 @@
 ```
 
 ##  依赖 <a name="编译环境" />
++   （重要）检查当前服务器的 `re2c` 版本，必须：`re2c >= 0.13.6` 
 +   [安装PHP7](http://www.cnblogs.com/tinywan/p/6607395.html)
 +   [安装zephir](https://github.com/phalcon/zephir)
 
@@ -114,7 +115,7 @@
     $ php -m | grep Zephir
     Zephir Parser
     ```
-+ re2c 版本过低，导致`php-zephir-parser`没发安装的问题
++ re2c 版本过低，导致`php-zephir-parser`安装失败
 
     * 安装 re2c 执行：`sudo apt-get install re2c`
     
@@ -126,12 +127,14 @@
         sudo ./install
         error: minimal required version of re2c is 0.13.6
         ```
-    * 查看当前版本，`Zephir`和`php-zephir-parser`安装要求：`re2c >= 0.13.6`
+    * 查看当前版本
     
         ```bash
         www@:~$ re2c --version
         re2c 0.13.5
         ```
+        > 注：`Zephir`和`php-zephir-parser`要求：`re2c >= 0.13.6`
+        
     * 下载安装最新版本
     
         ```bash
@@ -149,7 +152,7 @@
         www@:~/tinywan/re2c-0.16$ re2c --version
         re2c 0.16
         ```
-        > 注意：服务器系统内存不能小于：`512M`，否则编译没发通过
+        > 注意：服务器系统内存不能小于：`512M`，否则编译没发通过。
         
 ##  创建和检查授权脚本
 +   [创建 auth_key license_create.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_create.php)
