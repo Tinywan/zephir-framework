@@ -114,19 +114,19 @@
     $ php -m | grep Zephir
     Zephir Parser
     ```
-+ re2c 版本过低问题
++ re2c 版本过低，导致`php-zephir-parser`没发安装的问题
 
     * 安装 re2c 执行：`sudo apt-get install re2c`
     
       > `Ubuntu 14.04 LTS`系统默认安装
     
-    * 错误2
+    * 安装`php-zephir-parser`错误
     
         ```bash
         sudo ./install
         error: minimal required version of re2c is 0.13.6
         ```
-    * 查看当前版本
+    * 查看当前版本，`Zephir`和`php-zephir-parser`安装要求：`re2c >= 0.13.6`
     
         ```bash
         www@:~$ re2c --version
@@ -135,7 +135,7 @@
     * 下载安装最新版本
     
         ```bash
-        https://github.com/skvadrik/re2c/releases/download/0.16/re2c-0.16.tar.gz
+        wget https://github.com/skvadrik/re2c/releases/download/0.16/re2c-0.16.tar.gz
         
         tar zxvf re2c-0.16.tar.gz
         
@@ -149,7 +149,8 @@
         www@:~/tinywan/re2c-0.16$ re2c --version
         re2c 0.16
         ```
- 
+        > 服务器系统内存不能小于：`512`
+        
 ##  创建和检查授权脚本
 +   [创建 auth_key license_create.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_create.php)
 +   [授权验证 license_check.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_check.php)
