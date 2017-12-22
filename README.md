@@ -82,36 +82,74 @@
 +   4、重启`php-fpm`服务,查看扩展是否安装成功
     +   `sudo systemctl restart php-fpm.service` 
     +   ![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file1.png) 
-+   5、错误解决
-    +   编译错误
 
+##  错误问题    
+
++   编译错误
+
+    ```bash
+    root@iZ235mi4a64Z:~/zephir-framework/zephirlib# zephir build
+    ────────────────────────────────────────────────────────────
+      The Zephir Parser extension is not loaded.
+      Note: Zephir no longer distributed with internal parser.
+      
+      To install latest stable Zephir Parser please refer to:
+      https://github.com/phalcon/php-zephir-parser
+    ────────────────────────────────────────────────────────────
+    ```
++   如何解决，查看命令行`（cli）`的配置文件，添加`zephir_parser`扩展
+
+    ```bash
+    $ php --ini
+    Configuration File (php.ini) Path: /etc/php/7.1/cli
+    Loaded Configuration File:         /etc/php/7.1/cli/php.ini
+    Scan for additional .ini files in: /etc/php/7.1/cli/conf.d
+    ...
+
+    vim /etc/php/7.1/cli/php.ini  
+    //添加以下内容
+    [Zephir Parser]
+    extension=/usr/local/php-7.1.9/lib/php/extensions/no-debug-non-zts-20160303/zephir_parser.so
+
+    $ php -m | grep Zephir
+    Zephir Parser
+    ```
++ re2c 版本过低问题
+
+    * 安装 re2c 执行：`sudo apt-get install re2c`
+    
+      > `Ubuntu 14.04 LTS`系统默认安装
+    
+    * 错误2
+    
         ```bash
-        root@iZ235mi4a64Z:~/zephir-framework/zephirlib# zephir build
-        ────────────────────────────────────────────────────────────
-          The Zephir Parser extension is not loaded.
-          Note: Zephir no longer distributed with internal parser.
-          
-          To install latest stable Zephir Parser please refer to:
-          https://github.com/phalcon/php-zephir-parser
-        ────────────────────────────────────────────────────────────
+        sudo ./install
+        error: minimal required version of re2c is 0.13.6
         ```
-    +   如何解决，查看命令行`（cli）`的配置文件，添加`zephir_parser`扩展
-
+    * 查看当前版本
+    
         ```bash
-        $ php --ini
-        Configuration File (php.ini) Path: /etc/php/7.1/cli
-        Loaded Configuration File:         /etc/php/7.1/cli/php.ini
-        Scan for additional .ini files in: /etc/php/7.1/cli/conf.d
-        ...
-
-        vim /etc/php/7.1/cli/php.ini  
-        //添加以下内容
-        [Zephir Parser]
-        extension=/usr/local/php-7.1.9/lib/php/extensions/no-debug-non-zts-20160303/zephir_parser.so
-
-        $ php -m | grep Zephir
-        Zephir Parser
+        www@:~$ re2c --version
+        re2c 0.13.5
         ```
+    * 下载安装最新版本
+    
+        ```bash
+        https://github.com/skvadrik/re2c/releases/download/0.16/re2c-0.16.tar.gz
+        
+        tar zxvf re2c-0.16.tar.gz
+        
+        cd re2c-0.16
+        
+        ./configure
+        
+        make
+        make install
+        
+        www@:~/tinywan/re2c-0.16$ re2c --version
+        re2c 0.16
+        ```
+ 
 ##  创建和检查授权脚本
 +   [创建 auth_key license_create.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_create.php)
 +   [授权验证 license_check.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_check.php)
