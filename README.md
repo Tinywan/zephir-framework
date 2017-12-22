@@ -76,12 +76,36 @@
     Don't forget to restart your web server
     ```
 +   3、添加扩展到`php.ini`:
-
-    ```bash
-    extension=/usr/lib/php/20160303/zephirlib.so
-    ```
+    + PHP 7
+        + 配置文件
+            ```bash
+            vim /usr/local/php-7.1.9/etc/php.ini
+            # 添加内容
+            extension=/usr/lib/php/20160303/zephirlib.so
+            ```
+        +   重启服务器：`sudo service php5-fpm restart`  
+         
+    + PHP 5
+        + 配置文件
+        
+            ```bash
+            Installing shared extensions:     /usr/lib/php5/20121212/
+            Cleaning..
+        
+            cd /usr/lib/php5/20121212/
+        
+            sudo vim /etc/php5/mods-available/zephirlib.ini 
+            # 添加内容
+            extension=zephirlib.so
+            ```
+        + 切换到目录`/etc/php5/fpm/conf.d`做一个软连接文件
+        
+            ```bash
+            ln -s ../../mods-available/zephirlib.ini 20-zephirlib.ini
+            ```
+        +   重启服务器：`sudo service php5-fpm restart`    
+        
 +   4、重启`php-fpm`服务,查看扩展是否安装成功
-    +   `sudo systemctl restart php-fpm.service` 
     +   ![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file1.png) 
 
 ##  常见问题    
