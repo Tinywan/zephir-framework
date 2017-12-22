@@ -83,7 +83,7 @@
     +   `sudo systemctl restart php-fpm.service` 
     +   ![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file1.png) 
 
-##  错误问题    
+##  常见问题    
 
 +   编译错误
 
@@ -149,7 +149,7 @@
         www@:~/tinywan/re2c-0.16$ re2c --version
         re2c 0.16
         ```
-        > 服务器系统内存不能小于：`512`
+        > 注意：服务器系统内存不能小于：`512M`，否则编译没发通过
         
 ##  创建和检查授权脚本
 +   [创建 auth_key license_create.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_create.php)
