@@ -98,15 +98,20 @@
             # 添加内容
             extension=zephirlib.so
             ```
-        + 切换到目录`/etc/php5/fpm/conf.d`做一个软连接文件
+        + 切换到目录`/etc/php5/fpm/conf.d`做一个软连接
         
             ```bash
             ln -s ../../mods-available/zephirlib.ini 20-zephirlib.ini
             ```
-        +   重启服务器：`sudo service php5-fpm restart`    
+        +   重启服务器：`sudo service php5-fpm restart`   
+         
+        + [PHP 文件加密 Zend Guard Loader](http://www.cnblogs.com/tinywan/p/6888061.html) 
         
 +   4、重启`php-fpm`服务,查看扩展是否安装成功
+    
     +   ![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file1.png) 
+    
+    +   `/etc/php5/fpm/conf.d/20-zephirlib.ini`
 
 ##  常见问题    
 
