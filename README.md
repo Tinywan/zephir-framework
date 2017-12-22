@@ -78,11 +78,13 @@
 +   3、添加扩展到`php.ini`:
     + PHP 7
         + 配置文件
+        
             ```bash
             vim /usr/local/php-7.1.9/etc/php.ini
             # 添加内容
             extension=/usr/lib/php/20160303/zephirlib.so
             ```
+            
         +   重启服务器：`sudo service php5-fpm restart`  
          
     + PHP 5
@@ -181,7 +183,7 @@
         www@:~/tinywan/re2c-0.16$ re2c --version
         re2c 0.16
         ```
-        > 注意：服务器系统内存不能小于：`512M`，否则编译没发通过。
+        > 注意：服务器系统内存不能小于：`512M`，否则没发编译。
         
 ##  创建和检查授权脚本
 +   [创建 auth_key license_create.php](https://github.com/Tinywan/zephir-framework/blob/master/test/script/license_create.php)
