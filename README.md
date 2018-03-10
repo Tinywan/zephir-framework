@@ -22,9 +22,9 @@
 ```
 
 ##  依赖 <a name="编译环境" />
-+   （重要）检查当前服务器的 `re2c` 版本，必须：`re2c >= 0.13.6` 
-+   [安装PHP7](http://www.cnblogs.com/tinywan/p/6607395.html)
-+   [安装zephir](https://github.com/phalcon/zephir)
+* （重要）检查当前服务器的 `re2c` 版本，版本必须：`>= 0.13.6`     
+* [安装PHP7](http://www.cnblogs.com/tinywan/p/6607395.html)  
+* [安装zephir](https://github.com/phalcon/zephir)  
 
     ```bash
     sudo apt-get install php7.1-dev gcc make re2c autoconf
