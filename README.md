@@ -21,10 +21,11 @@
 └── ext                         -- 编译生成的.so文件
 ```
 
-##  编译环境和依赖
-* `re2c` 版本版本必须：`>= 0.13.6` 
-* [安装PHP](http://www.cnblogs.com/tinywan/p/6607395.html)
-* [安装zephir](https://github.com/phalcon/zephir)  
+##  编译环境和依赖   
+
+* `re2c` 版本版本必须：`>= 0.13.6`    
+* [安装 PHP7 ](http://www.cnblogs.com/tinywan/p/6607395.html)    
+* [安装 zephir](https://github.com/phalcon/zephir)  
 
     ```bash
     sudo apt-get install php7.1-dev gcc make re2c autoconf
@@ -32,7 +33,7 @@
     cd zephir
     sudo ./install -c
     ```
-+   [安装php-zephir-parser](https://github.com/phalcon/php-zephir-parser)
++   [安装 php-zephir-parser](https://github.com/phalcon/php-zephir-parser)
 
     ```bash
     git clone git://github.com/phalcon/php-zephir-parser.git
