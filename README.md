@@ -14,7 +14,7 @@ zephir-framework
 
 ##   项目结构 <a name="目录结构" />
 
-  ```bash
+```bash
   .
   ├── zephirlib                   -- 扩展库目录
   │   ├── Auth
@@ -30,11 +30,20 @@ zephir-framework
   │       └── Edit.zep            
   ├── config.json                 -- 编译扩展配置文件
   └── ext                         -- 编译生成的.so文件
-  ```
+```
 ##  如何使用   
 
 ```php
-$zephir = new \zephirlib();
+$service_uuid = "13c7c8e1-3ac2-41a6-95dc-ff954b431bbf";
+$auth_license = "1501402071-0-0-eabfb0fb52c429d4fa037585f7afd512";
+$video = new \ZephirLib\Module\VideoEdit($service_uuid,$auth_license);
+dump($video);
+// 打印结果
+object(ZephirLib\Module\VideoEdit)#3 (3) {
+  ["service_uuid":protected] => string(36) "13c7c8e1-3ac2-41a6-95dc-ff954b431bbf"
+  ["auth_license":protected] => string(47) "1501402071-0-0-eabfb0fb52c429d4fa037585f7afd512"
+  ["auth_status"] => int(-1)
+}
 ```
 
 ##  编译环境和依赖   
@@ -71,52 +80,52 @@ $zephir = new \zephirlib();
   ```
   sudo service php-fpm restart
   ```
-*  配置检查  
+* 配置检查  
    ![配置检查](https://github.com/Tinywan/zephir-framework/blob/master/file/Zephir-Parser.png)  
 
 ## 安装框架 <a name="如何编译" />
-* 1、下载:
-  ```bash
-  git clone https://github.com/Tinywan/zephir-framework.git
-  ```
+*   1、下载:
+    ```bash
+    git clone https://github.com/Tinywan/zephir-framework.git
+    ```
 *   2、编译:
 
-  ```bash
-  cd zephir-framework/zephirlib
-  zephir build
-  Compiling...
-  Installing...
-  Extension installed!
-  Add extension=zephirlib.so to your php.ini
-  Don't forget to restart your web server
-  ```
+    ```bash
+    cd zephir-framework/zephirlib
+    zephir build
+    Compiling...
+    Installing...
+    Extension installed!
+    Add extension=zephirlib.so to your php.ini
+    Don't forget to restart your web server
+    ```
 *   3、添加扩展到`php.ini`:  
 *   PHP 7  
     ```bash
-      vim /usr/local/php-7.1.9/etc/php.ini
-      # 添加内容
-      extension=/usr/lib/php/20160303/zephirlib.so
+        vim /usr/local/php-7.1.9/etc/php.ini
+        # 添加内容
+        extension=/usr/lib/php/20160303/zephirlib.so
     ```
     > 重启服务器：`sudo systemctl restart php-fpm.service`  
 
 *   PHP 5
-  ```bash
-  cd /usr/lib/php5/20121212/
+    ```bash
+    cd /usr/lib/php5/20121212/
 
-  sudo vim /etc/php5/mods-available/zephirlib.ini 
-  // 添加内容
-  extension=zephirlib.so
-  ```
-* 切换到目录`/etc/php5/fpm/conf.d`做一个软连接  
+    sudo vim /etc/php5/mods-available/zephirlib.ini 
+    // 添加内容
+    extension=zephirlib.so
+    ```
+*   切换到目录`/etc/php5/fpm/conf.d`做一个软连接  
 
-  ```bash
-  ln -s ../../mods-available/zephirlib.ini 20-zephirlib.ini
-  ```
-* 重启服务器：`sudo service php5-fpm restart`   
+    ```bash
+    ln -s ../../mods-available/zephirlib.ini 20-zephirlib.ini
+    ```
+*   重启服务器：`sudo service php5-fpm restart`   
 
-* [PHP 文件加密 Zend Guard Loader](http://www.cnblogs.com/tinywan/p/6888061.html) 
+*   [PHP 文件加密 Zend Guard Loader](http://www.cnblogs.com/tinywan/p/6888061.html) 
 
-* 4、重启`php-fpm`服务,查看扩展是否安装成功
+*   4、重启`php-fpm`服务,查看扩展是否安装成功
 
 ![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file1.png)   
 
@@ -137,7 +146,7 @@ $zephir = new \zephirlib();
   ```
   > [Issue上如何解决以上错误](https://github.com/phalcon/zephir/issues/1653)  
   > 案例：`ln -sf /www/server/php/70/bin/php-config /usr/bin/php-config`  
- 
+
 * 如何解决，查看命令行`（cli）`的配置文件，添加`zephir_parser`扩展
 
   ```bash
