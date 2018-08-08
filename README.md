@@ -81,7 +81,7 @@ object(ZephirLib\Module\VideoEdit)#3 (3) {
   sudo service php-fpm restart
   ```
 * 配置检查  
-   ![配置检查](https://github.com/Tinywan/zephir-framework/blob/master/file/Zephir-Parser.png)  
+   ![配置检查](./file/Zephir-Parser.png)  
 
 ## 安装框架 <a name="如何编译" />
 *   1、下载:
@@ -127,7 +127,7 @@ object(ZephirLib\Module\VideoEdit)#3 (3) {
 
 *   4、重启`php-fpm`服务,查看扩展是否安装成功
 
-![Markdown](https://github.com/Tinywan/zephir-framework/blob/master/file/zephir_config_file1.png)   
+![Markdown](./file/zephir_config_file1.png)   
 
 > `/etc/php5/fpm/conf.d/20-zephirlib.ini`
 
